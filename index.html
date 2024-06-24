@@ -3,58 +3,6 @@ layout: default
 ---
 
 <div class="page clearfix" index>
-    <div class="left">
-        <h1>About me</h1>
-        <hr>
-        <p>Dimitar (Dim) has half a decade of experience in Cloud Engineering and Automation, specializing in the creation and
-            maintenance of secure and reliable infrastructure. In the physical world he repetitively lifts heavy things
-            and puts them back down.
-            <br><br>
-            He is currently a Cloud Engineer at <a href="https://cloudreach.com/">Cloudreach</a>.
-        </p>
-
-        <h1>Recent work</h1>
-        <hr>
-
-        <ul>
-            {% for post in paginator.posts %}
-              <li>
-                <h2>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-                <div class="label">
-                    <div class="label-card">
-                        <i class="fa fa-calendar"></i>{{ post.date | date: "%F" }}
-                    </div>
-                    <div class="label-card">
-                        {% if post.author %}<i class="fa fa-user"></i>{{ post.author }}
-                        {% endif %}
-                    </div>
-                    <div class="label-card">
-                        {% if page.meta %}<i class="fa fa-key"></i>{{ page.meta }}  {% endif %}
-                    </div>
-
-                    <div class="label-card">
-                    {% include category.html %}
-                    </div>
-
-                    <div class="label-card">
-                    {% include tag.html %}
-                    </div>
-                </div>
-                <div class="excerpt">
-                    {{post.excerpt}}
-                </div>
-                <div class="read-all">
-                    <a  href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-newspaper-o"></i>Read</a>
-                </div>
-                <hr>
-              </li>
-            {% endfor %}
-        </ul>
-
-    </div>
-    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
     <div class="right">
         <div class="wrap">
             <div class="side">
@@ -102,11 +50,67 @@ layout: default
                 </ul>
             </div>
 
-
             <img src="/images/not-by-ai.svg" alt="not-by-ai">
 
         </div>
     </div>
+    <div class="left-wrapper">
+        <div class="left">
+            <h1>About me</h1>
+            <hr>
+            <p>Dimitar (Dim) has half a decade of experience in Cloud Engineering and Automation, specializing in the
+                creation and
+                maintenance of secure and reliable infrastructure. In the physical world he repetitively lifts heavy
+                things
+                and puts them back down.
+                <br><br>
+                He is currently a Cloud Engineer at <a href="https://cloudreach.com/">Cloudreach</a>.
+            </p>
+        </div>
+
+        <div class="left" style="margin-top: 1.25rem">
+            <h1>Recent work</h1>
+            <hr>
+            <ul>
+                {% for post in paginator.posts %}
+                <li>
+                    <h2 style="font-size: 22px">
+                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    </h2>
+                    <div class="label">
+                        <div class="label-card">
+                            <i class="fa fa-calendar"></i>{{ post.date | date: "%F" }}
+                        </div>
+                        <div class="label-card">
+                            {% if post.author %}<i class="fa fa-user"></i>{{ post.author }}
+                            {% endif %}
+                        </div>
+                        <div class="label-card">
+                            {% if page.meta %}<i class="fa fa-key"></i>{{ page.meta }} {% endif %}
+                        </div>
+
+                        <div class="label-card">
+                            {% include category.html %}
+                        </div>
+
+                        <div class="label-card">
+                            {% include tag.html %}
+                        </div>
+                    </div>
+                    <div class="excerpt">
+                        {{post.excerpt}}
+                    </div>
+                    <div class="read-all">
+                        <a href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-newspaper-o"></i>Read</a>
+                    </div>
+                    <hr>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
 </div>
 <!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
 <!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
