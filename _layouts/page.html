@@ -2,25 +2,27 @@
 layout: default
 ---
 
-<!-- begin page -->
-<article class="page container">
-
-  <div class="page-head">
-    <h1 class="page-title">{{ page.title | escape }}</h1>
-    {% if page.description %}
-      <p class="page-description">{{ page.description }}</p>
-    {% endif %}
-  </div>
-
-  {% if page.image %}
-    <div class="page-image">
-      <img class="lazy" data-src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}">
+<div class="page clearfix" post>
+    <div class="left">
+        <h1>{{page.title}}</h1>
+        <hr>
+        {{content}}
     </div>
-  {% endif %}
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
 
-  <div class="page__content">
-    {{ content }}
-  </div>
-
-</article>
-<!-- end page -->
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script>

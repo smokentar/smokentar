@@ -1,56 +1,49 @@
-#-------------------------------
-# General Site Settings
-baseurl: "" # the subpath of your site, e.g. /resources
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
+# Site settings
+title: Dimitar Atanasov
+brief-intro: DevOps & Security
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 
-#-------------------------------
-# Build Settings
+permalink: /:collection/:title/
+
+# other links
+twitter_username:
+github_username:  smokentar
+email: dim@smokentar.com
+linkedIn_username: test
+
+description_footer: This site records professional content only.
+
+# statistic analysis 统计代码
+google_analytics_id:
+
+# Build settings
 markdown: kramdown
-permalink: /:title
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# port
+# port: 1234
+
+# url
+category_dir: category/
+tag_dir: tag/
+
+# excerpt
+excerpt_separator: "\n\n\n\n"
+
+# paginate
+gems: [jekyll-paginate]
+paginate: 10
+
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
-
-paginate: 4
-paginate_path: "/resources/page/:num"
-
-
-#-------------------------------
-# Collections
-collections:
-  pages:
-    output: true
-    permalink: /:name
-  posts:
-    output: true
-    permalink: /resources/:slug
-  projects:
-    output: true
-    permalink: /projects/:slug
-
-# Pages Path
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
-
-sass:
-  sass_dir: _sass
-  style: compressed

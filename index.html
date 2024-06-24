@@ -1,14 +1,112 @@
 ---
 layout: default
-image: '/images/cover.svg'
 ---
 
-{% include section-projects.html %}
+<div class="page clearfix" index>
+    <div class="left">
+        <h1>About me</h1>
+        <hr>
+        <p>Dimitar (Dim) has half a decade of experience in Cloud Engineering and Automation, specializing in the creation and
+            maintenance of secure and reliable infrastructure. In the physical world he repetitively lifts heavy things
+            and puts them back down.
+            <br><br>
+            He is currently a Cloud Engineer at <a href="https://cloudreach.com/">Cloudreach</a>.
+        </p>
 
-{% include section-testimonials.html %}
+        <h1>Recent work</h1>
+        <hr>
 
-{% include section-resources.html %}
+        <ul>
+            {% for post in paginator.posts %}
+              <li>
+                <h2>
+                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>{{ post.date | date: "%F" }}
+                    </div>
+                    <div class="label-card">
+                        {% if post.author %}<i class="fa fa-user"></i>{{ post.author }}
+                        {% endif %}
+                    </div>
+                    <div class="label-card">
+                        {% if page.meta %}<i class="fa fa-key"></i>{{ page.meta }}  {% endif %}
+                    </div>
 
-{% include section-videos.html %}
+                    <div class="label-card">
+                    {% include category.html %}
+                    </div>
 
-{% include section-gallery.html %}
+                    <div class="label-card">
+                    {% include tag.html %}
+                    </div>
+                </div>
+                <div class="excerpt">
+                    {{post.excerpt}}
+                </div>
+                <div class="read-all">
+                    <a  href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-newspaper-o"></i>Read</a>
+                </div>
+                <hr>
+              </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
+    <div class="right">
+        <div class="wrap">
+            <div class="side">
+                <div>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Technology
+                </div>
+                <ul class="content-ul" recent>
+                    <li><a href="https://aws.amazon.com/" target="_blank">Amazon Web Services</a></li>
+                    <li><a href="https://www.python.org/" target="_blank">Python</a></li>
+                    <li><a href="https://www.terraform.io/" target="_blank">Terraform</a></li>
+                    <li><a href="https://www.docker.com/" target="_blank">Docker</a></li>
+                    <li><a href="https://linux.org/pages/download/" target="_blank">Linux</a></li>
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="side ">
+                <div>
+                    <i class="fa fa-th-list"></i>
+                    Certification
+                </div>
+                <ul class="content-ul" recent>
+                    <li>
+                        <a href="https://example.com">Will update soon...</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <div class="side">
+                <div>
+                    <i class="fa fa-comment"></i>
+                    Contact
+                </div>
+                <ul class="content-ul" recent>
+                    <li>
+                        <a href="mailto:dim@smokentar.com">Email</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/dimatt/">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/smokentar">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <img src="/images/not-by-ai.svg" alt="not-by-ai">
+
+        </div>
+    </div>
+</div>
+<!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+<!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
