@@ -17,12 +17,12 @@ permalink: /:collection/:title/
 twitter_username:
 github_username:  smokentar
 email: dim@smokentar.com
-linkedIn_username: test
+linkedIn_username: dimatt
 
 description_footer: This site records professional content only.
 
-# statistic analysis 统计代码
-google_analytics_id:
+# statistic analysis
+google_analytics_id: G-RSWENHHV9W
 
 # Build settings
 markdown: kramdown
