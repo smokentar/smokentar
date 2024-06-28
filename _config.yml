@@ -7,7 +7,7 @@
 
 # Site settings
 title: Dimitar Atanasov
-brief-intro: DevOps & Security
+brief-intro: Infrastructure & Security
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 

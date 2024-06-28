@@ -24,15 +24,21 @@ mathjax: true
 
 ## Overview
 
-As an engineer in a managed services provider, I have observed that a lot of churn is attributed to repetitive and less innovative work. This mostly impacts junior engineers who don't yet have the experience to deliver projects and are mainly assigned to support roles.
+As an engineer in a managed services provider I want to automate any manual task that I will perform more than twice. I'm confident my colleagues follow a similar methodology.
 
-Junior engineers are valuable, I see them as the mids and seniors of tomorrow. As a junior, I would have enjoyed having access to some library, allowing me to easily automate a task which I have already done manually a few times, so I could invest my time in learning something new.
+Unfortunately, engineering individuality leads to a fragmented landscape of custom scripts, many of which perform similar functions but are written, tested and maintained independently.
 
-That's why I created and open-sourced this project.
+Just imagine having to run a global operation script against production, and you have to write it from scratch. Say you are a 10x engineer and cook up the code in lightning speed, now time to execute. 
+> "Fear leads to anger, anger leads to hate, hate leads to suffering." - Master Yoda
+
+My motivation for creating this library is to 1. remove suffering from the equation, 2. ensure effort is not wasted, but built upon, and 3. get some practice on hosting open-source from scratch.
 
 ## The project
 
-The library is a collection of reusable Amazon Web Services actions, written in Python, on top of Boto3, that can be used to automate common cloud tasks. It is designed to be easy to use and extend, allowing engineers to quickly automate repetitive tasks, even with limited coding experience.
+The library is a collection of reusable Amazon Web Services actions, written in Python, on top of Boto3, that can be used to automate common cloud tasks. 
+
+Think of ```ec2.discover_unused_security_groups()``` 
+instead of 500 lines of boilerplate code.
 
 #### Flexible
 Actions can be used individually (CLI) or linked together to form workflows (programmatic).
@@ -55,7 +61,7 @@ Output from one action can be used as input to another action.
 I have included a few <a href="https://docs.avtomat.io/aws/examples" target="_blank">examples</a> to demonstrate different use cases.
 
 #### Work in progress
-This project is a work in progress, I am (frequently or infrequently) adding new actions and improving existing ones. I am also open to contributions from the community.
+This project is a work in progress, I will be infrequently adding new actions and improving existing ones. I am also open to contributions from the community.
 
 ## More details
 
@@ -64,10 +70,5 @@ Currently, there are no built-in workflows. I have included some in the document
 
 #### Hosting
 The entire codebase is hosted on <a href="https://github.com/avtomat-hub/avtomat-aws" target="_blank">GitHub</a>. Packages are published to <a href="https://pypi.org/project/avtomat-aws/" target="_blank">PyPi</a>.
-
-## Conclusion
-
-I created this project to 1. help engineers automate repetitive tasks and 2. get some practice on hosting open-source from scratch. 
-It is mostly used internally by my team, however I am confident it can benefit a wider audience.
 
 
