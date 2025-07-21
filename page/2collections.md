@@ -27,7 +27,3 @@ type: page
 * <a href="https://linuxjourney.com/" target="_blank">LinuxFu</a>
 
     A quick way to grasp common Linux concepts.
-
-* <a href="https://www.history.navy.mil/content/dam/museums/hrnm/Education/EducationWebsiteRebuild/RussianPropagandaAboutGermany/Socialism,%20Fascism,%20Capitalism,%20Communism%20Background.pdf" target="_blank">Socialism, Fascism, Capitalism, and Communism Chart</a>
-    
-    Quick comparison between the four economic systems.
