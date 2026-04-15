@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
+<!doctype html>
+<html lang="{{ site.locale | default: 'en-US' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: page.description | default: site.description | strip_html | escape }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body class="{% if page.url == '/' %}page-home{% else %}page-project{% endif %}">
+    <main class="site-shell{% unless page.url == '/' %} site-shell--project{% endunless %}">
+      {% if page.url == '/' %}
+        {% include author-profile.html %}
+        <div class="hero-divider" aria-hidden="true"></div>
+      {% else %}
+        <header class="project-header">
+          <a class="back-link" href="{{ '/' | relative_url }}">Back</a>
+          <h1 class="project-header__title">{{ page.title }}</h1>
+          {% if page.tags and page.tags.size > 0 %}
+            <ul class="project-header__tags" aria-label="Tags">
+              {% for tag in page.tags %}
+                <li class="project-header__tag">{{ tag }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </header>
+      {% endif %}
+      <section class="page-content{% unless page.url == '/' %} page-content--project{% endunless %}">
         {{ content }}
-
-    {% include footer.html %}
-    {% include backToTop.html %}
-    <script src="{{ " /js/main.js " | prepend: site.baseurl }}" charset="utf-8"></script>
-    <script src="{{ " /js/smooth-scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script>
-    <script type="text/javascript">
-      smoothScroll.init({
-        speed: 500, // Integer. How fast to complete the scroll in milliseconds
-        easing: 'easeInOutCubic', // Easing pattern to use
-        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
-      });
-    </script>
-    <!-- <script src="{{ " /js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+      </section>
+    </main>
   </body>
-
 </html>
