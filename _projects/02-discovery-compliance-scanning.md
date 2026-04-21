@@ -14,6 +14,8 @@ tags:
 
 Discover resources in a target cloud account and evaluate them against pre-defined rules to generate alerts. Automate process using AWS services and open-source software.
 
+![](/images/dcs/tldr.svg)
+
 ## Overview
 
 Today's enterprise operates across thousands of resources distributed over multiple cloud environments which evolve constantly - provisioned and modified by different teams - making one problem increasingly difficult to solve: context and visibility.
@@ -31,9 +33,9 @@ Cloud Security Posture Scanning (CSPM) continuously monitors an infrastructure, 
 
 To achieve the above, we need a method to 1. discover resources and 2. evaluate their configuration against a set of rules.
 
-![](/images/dcs.svg)
+![](/images/dcs/pipeline.png)
 
-Staying consistent with how we approached [Agentless Vulnerability Scanning](/projects/01-agentless-vulnerability-scanning), we will use AWS services to automate this process:
+Staying consistent with the approach of [Agentless Vulnerability Scanning](/projects/01-agentless-vulnerability-scanning), we will use AWS services to automate this process:
 
 - **API Gateway** to connect our frontend with the backend
 - **Lambda** to handle orchestration logic and initiate analysis
@@ -45,14 +47,12 @@ Staying consistent with how we approached [Agentless Vulnerability Scanning](/pr
 
 ### Workflow
 
-![](/images/dcs-pipeline.png)
-
 #### 1. Initiation
 
 Scans are triggered in two ways:
 
-1. **Ad-hoc request** - user action in the frontend calls API Gateway, which invokes a Lambda function that sends a message to SQS.
-2. **Scheduled execution** - EventBridge sends a message directly to SQS on a predefined schedule.
+- **Ad-hoc request** - user action in the frontend calls API Gateway, which invokes a Lambda function that sends a message to SQS.
+- **Scheduled execution** - EventBridge sends a message directly to SQS on a predefined schedule.
 
 #### 2. Polling & Task dispatch
 
@@ -75,7 +75,7 @@ This extra transformation step aligns Steampipe data to the CloudQuery schema, e
 
 ### Result
 
-![](/images/data-schema-is.png)
+![](/images/dcs/data-schema.png)
 
 Due to the vast number of cloud resource types and possible relationships between them, it is incredibly difficult to represent an entire environment in a single diagram. This illustration shows a simplified example of correlations that may exist, in combination with [Agentless Vulnerability Scanning](/projects/01-agentless-vulnerability-scanning).
 
