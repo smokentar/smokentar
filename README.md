@@ -1,3 +1,3 @@
 # Dimitar Atanasov
 
-Minimal Jekyll portfolio site with a single homepage.
+Minimal Jekyll bio website with a single homepage.

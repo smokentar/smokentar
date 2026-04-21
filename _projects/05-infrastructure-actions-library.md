@@ -1,7 +1,7 @@
 ---
 title: "AWS Infrastructure Actions Library"
 excerpt: "is a collection of Amazon Web Services actions, bringing speed and certainty to repetitive cloud operations."
-collection: portfolio
+collection: projects
 tags:
   - AWS
   - Python

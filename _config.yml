@@ -24,19 +24,19 @@ positions:
   - employer: "Atos"
     employer_url: "https://atos.net"
     image: "/images/atos.jpeg"
-    description: "**Atos acquired Cloudreach** in 2022. During this period, I **led a team of four engineers** through the proposal, planning and delivery of AWS and Azure infrastructure automation projects.<br/> My **most impactful project** was a resource cleanup automation for an AWS client in the retirement market, which **reduced >$10,000 in monthly costs** by idenifying and removing hundreds of unused resources across 3 accounts in the first month of being deployed. <br/> My **most recent project** was a **greenfield migration from Signalfx to Dynatrace**, an alerting solution used by 30+ clients in production. This involved building configuration as code, detectors, alerting integrations and workflows from scratch."
+    description: "**Atos acquired Cloudreach** in 2022. Shortly after, I  took ownership of a newly formed workstream, **leding a team of four engineers** through the proposal, planning and delivery of infrastructure automation projects across AWS and Azure.<br/> My **most impactful solo project** was a resource cleanup automation for an AWS client in the retirement market, which **reduced >$10,000 in monthly costs** by idenifying and removing hundreds of unused resources across 3 accounts in the first month of being deployed. <br/> My **most recent team project** was a **greenfield migration from Signalfx to Dynatrace**, an alerting solution used by 30+ clients in production. This involved building configuration as code, detectors, alerting integrations and workflows from scratch."
     from_year: "2023"
     to_year: "Present"
   - employer: "Cloudreach"
     employer_url: "https://cloudreach.com"
     image: "/images/cloudreach.png"
-    description: "Right after finishing my internship I started as an **Associate Cloud Engineer** in **Cloudreach**, responsible for reactive support of cloud infrastructure, including incident response, patching, monitoring and backups. <br/> I was promoted to a **Cloud Engineer** within my first year, shifting to a more proactive role, involving infrastructure as code, automation, and security hardening."
+    description: "I started as an **Associate Cloud Engineer** at **Cloudreach**, responsible for reactive support of cloud infrastructure, including incident response, patching, monitoring and backups. <br/> I was promoted to a **Cloud Engineer** within my first year, shifting to a more proactive role, involving infrastructure as code, automation, and security hardening."
     from_year: "2020"
     to_year: "2022"
   - employer: "Servicenow"
     employer_url: "https://servicenow.com"
     image: "/images/servicenow.jpeg"
-    description: "During university I secured an internship as an **Integrations Engineer** in **ServiceNow** where I was assisting clients with custom integration and automation of their platforms. This is where I got my first taste of enterprise and cloud, ultimately leading to my career in the field."
+    description: "I secured an internship as an **Integrations Engineer** at **ServiceNow** where I was assisting clients with custom integration and automation of their platforms. This is where I got my first taste of enterprise and cloud, ultimately leading to my career in the field."
     from_year: "2019"
     to_year: "2020"
   - employer: "Edinburgh Napier University"
@@ -53,13 +53,13 @@ positions:
     to_year: "2017"
 
 collections:
-  portfolio:
+  projects:
     output: true
 
 defaults:
   - scope:
       path: ""
-      type: portfolio
+      type: projects
     values:
       layout: default
 

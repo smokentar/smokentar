@@ -7,11 +7,11 @@ permalink: /
 
 Dimitar Atanasov has half a decade of experience in Cloud Engineering and Automation, specializing in the creation and maintenance of secure and reliable infrastructure. In the physical world he repetitively lifts heavy things and puts them back down.
 
-# portfolio
+# projects
 
 <div class="section-block">
-{% for post in site.portfolio reversed %}
-{% include portfolio-item.html %}
+{% for post in site.projects reversed %}
+{% include project-item.html %}
 
 <hr>
 {% endfor %}
