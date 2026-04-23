@@ -61,26 +61,51 @@ Two components are used to query the Neo4j database:
 
 ### Frontend
 
-#### 1. Dashboard
+#### 1. Dashboards
+
+Multiple dashboards are available, offering visibility into onboarded accounts, compliance posture, and scanned services such as IAM, EC2, KMS, and others.
+
+The Javascript code powering these dashboards is template-driven, allowing new dashboards to be created quickly through a JSON specification.
+
+The dashboard shown below focuses on workload security at a high level.
 
 ![cspm-overview](/images/cspm/overview.png)
 
 #### 2. Discovery
 
+A section which displays discovered entities across all onboarded accounts. Each tab is clickable, allowing deeper drill-down into specific details.
+
 ![cspm-discovery](/images/cspm/discovery.png)
 
 #### 2. Vulnerabilities
+
+A section listing all unique vulnerabilities identified across all onboarded accounts. Each item is clickable, providing additional details about the specific CVE, along with the workloads impacted by it.
 
 ![cspm-vulnerabilities](/images/cspm/vulnerabilities.png)
 
 #### 3. Compliance
 
+This module contains two separate sections, each focused on a different layer of visibility:
+
 - **Platform level**
-  ![cspm-compliance](/images/cspm/compliance.png)
+  - Displays results from infrastructure compliance scans, mapping cloud resource misconfigurations to specific controls within the selected standard. Users can choose from a list of available standards such as PCI DSS, CISA Cyber Essentials, and others, while filtering by scanned accounts.
+
+    ![cspm-compliance](/images/cspm/compliance.png)
 
 - **OS level**
-  ![cspm-misconfigurations](/images/cspm/misconfigurations.png)
+  - Displays results from operating system compliance scans, mapping host misconfigurations against requirements from the Center for Internet Security (CIS) benchmark.
+
+    ![cspm-misconfigurations](/images/cspm/misconfigurations.png)
 
 #### 4. Query Builder
 
+A single interface for querying all discovered resources, their configurations, compliance and vulnerabilities. It enables the creation of complex, cross-resource, even cross-account queries to derive meaningful conclusions.
+
+On the frontend, uuser build queries through dropdown-based fields that define what they want to retrieve.
+On the backend, these inputs transformed into GraphQL queries, sent to Apollo Server, translated into Cypher, and executed against the database.
+
 ![cspm-query](/images/cspm/query.png)
+
+### Result
+
+By combining this NextJS application with [Agentless Vulnerability Scanning](/projects/01-agentless-vulnerability-scanning), [Discovery and Compliance Scanning](/projects/02-discovery-compliance-scanning), and [Application Vending Pipeline](/projects/03-application-vending-pipeline), we have an excellent starting points for a fully fledged, self-hosted Cloud Security Posture Scanning platform, provisioned and managed entirely through infrastructure as code.
