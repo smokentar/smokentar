@@ -56,15 +56,14 @@ Authentication is handled via HTTP-only cookies for admin sessions, with token g
 
 ### Storage
 
-Each tenant uses a dedicated SQLite database stored as a file on disk.<br>
-File storage (e.g. images) is handled in a tenant-specific directory, attached to the container's persistent volume.<br>
+Each container requires a dedicated SQLite database stored as a file on disk.<br>
+File storage (e.g. images) is handled in a specific directory, attached to the container's persistent volume.<br>
 Images are automatically compressed before being stored.
 
 ### Containers & Deployment
 
-Each client is deployed as an isolated Docker container containing the full application stack.<br>
-An Nginx service fronts all containers, terminates SSL and distributes traffic based on host header.<br>
-SSL certificates are generated with Let's Encrypt.
+The entire application comes in a single Docker container. An Nginx service can be used as a front to one or multiple containers, terminatign SSL and distributing traffic based on host header.
+SSl certificates can be generated with Let's Encrypt.
 
 ## Summary
 

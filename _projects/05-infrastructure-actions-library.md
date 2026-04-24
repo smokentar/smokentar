@@ -13,11 +13,11 @@ _Open source. View code at [avtomat-aws](https://github.com/avtomat-hub/avtomat-
 
 ## Overview
 
-As an engineer in a managed services provider I want to automate manual tasks where possible. I'm confident my colleagues follow a similar methodology.
+As an engineer, I naturally lean towards automation when possible. I'm confident my colleagues are the same.
 
 Unfortunately, engineering individuality leads to a fragmented landscape of custom scripts, many of which perform similar functions but are written, tested and maintained independently.
 
-Just imagine having to run a global operation script against production, and you have to write it from scratch. Say you are a 10x engineer and cook up the code in lightning speed, now time to execute.
+Imagine having to run a global operation script against production, you write it from scratch, and now it's time to execute.
 
 > "Fear leads to anger, anger leads to hate, hate leads to suffering." - Master Yoda
 
@@ -41,14 +41,10 @@ Think of `ec2.discover_unused_security_groups()` instead of 500 lines of boilerp
 
 ## Examples
 
-I have included a few <a href="https://docs.avtomat.io/aws/examples" target="_blank">examples</a> to demonstrate different use cases.
+I have included a few programmatic <a href="https://docs.avtomat.io/aws/examples" target="_blank">examples</a> to demonstrate different use cases.
 
-## More details
+Furthermore, I have displayed some <a href="https://docs.avtomat.io/aws/workflows" target="_blank">simple workflows</a> to show what can be achieved through this library. I did not release the code for these, pending a decision about how to move the project forward.
 
-### Workflows
+## Work in progress
 
-Currently, there are no built-in workflows. I have included some in the documentation, however they are currently closed-source, pending a decision about how to move the project forward.
-
-### Work in progress
-
-This project is a work in progress, I will be infrequently adding new actions and improving existing ones. I am also open to contributions from the community.
+This library is a work in progress, I will be infrequently adding new actions and improving existing ones. I am also open to contributions from the community.
