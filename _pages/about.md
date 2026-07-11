@@ -5,7 +5,7 @@ permalink: /
 
 # bio
 
-Dimitar Atanasov has half a decade of experience in Cloud Engineering and Automation, specializing in the creation and maintenance of secure and reliable infrastructure. In the physical world he repetitively lifts heavy things and puts them back down.
+Dimitar Atanasov has six years of experience in Cloud Engineering and Automation, specializing in the creation and maintenance of secure and reliable infrastructure. In the physical world he repetitively lifts heavy things and puts them back down.
 
 # projects
 
