@@ -1,0 +1,45 @@
+{% assign position = include.position %}
+
+<article class="position-card">
+  <div class="position-card__media">
+    {% if position.image %} {% if position.employer_url %}
+    <a href="{{ position.employer_url }}" aria-label="{{ position.employer }}">
+      <img
+        class="position-card__image"
+        src="{{ position.image | relative_url }}"
+        alt="{{ position.employer }}"
+      />
+    </a>
+    {% else %}
+    <img
+      class="position-card__image"
+      src="{{ position.image | relative_url }}"
+      alt="{{ position.employer }}"
+    />
+    {% endif %} {% else %} {% if position.employer_url %}
+    <a href="{{ position.employer_url }}" aria-label="{{ position.employer }}">
+      <div class="position-card__fallback" aria-hidden="true">
+        {{ position.employer | slice: 0, 1 }}
+      </div>
+    </a>
+    {% else %}
+    <div class="position-card__fallback" aria-hidden="true">
+      {{ position.employer | slice: 0, 1 }}
+    </div>
+    {% endif %} {% endif %}
+  </div>
+
+  <div class="position-card__body">
+    {% if position.description %}
+    <div class="position-card__description">
+      {{ position.description | markdownify }}
+    </div>
+    {% endif %} {% if position.from_year or position.to_year %}
+    <p class="position-card__years">
+      {% if position.from_year %}{{ position.from_year }}{% endif %}{% if
+      position.from_year and position.to_year %} - {% endif %}{% if
+      position.to_year %}{{ position.to_year }}{% endif %}
+    </p>
+    {% endif %}
+  </div>
+</article>

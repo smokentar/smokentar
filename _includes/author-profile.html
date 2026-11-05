@@ -1,0 +1,62 @@
+{% assign avatar_src = site.author.avatar %}
+{% unless avatar_src contains "://" %}
+  {% assign avatar_src = '/images/' | append: avatar_src %}
+{% endunless %}
+
+<section class="profile-hero" itemscope itemtype="https://schema.org/Person">
+  <img
+    class="profile-hero__avatar"
+    src="{{ avatar_src | relative_url }}"
+    alt="{{ site.author.name }}"
+    width="240"
+    height="240"
+  >
+
+  <div class="profile-hero__content">
+    <h1 class="profile-hero__name" itemprop="name">{{ site.author.name }}</h1>
+    {% if site.author.current_position or site.author.employer %}
+      <p class="profile-hero__position" itemprop="jobTitle">
+        {% if site.author.current_position %}
+          {{ site.author.current_position }}
+        {% endif %}
+        {% if site.author.current_position and site.author.employer %} @ {% endif %}
+        {% if site.author.employer %}
+          {% if site.author.employer_url %}
+            <a href="{{ site.author.employer_url }}">{{ site.author.employer }}</a>
+          {% else %}
+            {{ site.author.employer }}
+          {% endif %}
+        {% endif %}
+      </p>
+    {% elsif site.author.bio %}
+      <p class="profile-hero__position">{{ site.author.bio }}</p>
+    {% endif %}
+
+    <ul class="profile-hero__links" aria-label="Contact links">
+      {% if site.author.email %}
+        <li>
+          <a href="mailto:{{ site.author.email }}" aria-label="Email">
+            <img class="profile-hero__icon" src="{{ '/images/email.svg' | relative_url }}" alt="">
+            <span class="sr-only">Email</span>
+          </a>
+        </li>
+      {% endif %}
+      {% if site.author.github %}
+        <li>
+          <a href="https://github.com/{{ site.author.github }}" aria-label="GitHub">
+            <img class="profile-hero__icon" src="{{ '/images/github.svg' | relative_url }}" alt="">
+            <span class="sr-only">GitHub</span>
+          </a>
+        </li>
+      {% endif %}
+      {% if site.author.linkedin %}
+        <li>
+          <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" aria-label="LinkedIn">
+            <img class="profile-hero__icon" src="{{ '/images/linkedin.svg' | relative_url }}" alt="">
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</section>
